@@ -80,8 +80,8 @@ int QP4Handler::beginclip()
                               "Hívj endclip()-et előbb!");
     int w,h;
     const char* name;
-    w=luaL_checkint(L,1);
-    h=luaL_checkint(L,2);
+    w=luaL_checkinteger(L,1);
+    h=luaL_checkinteger(L,2);
     name=luaL_checkstring(L,3);
     currentClip_=new Clip(w,h,name);
     return 0;
@@ -126,7 +126,7 @@ int QP4Handler::frame()
 {
     if(!currentClip_)LUA_ERROR("frame() csak beginclip() és endclip() "
                                "között hívható!");
-    int delay=luaL_checkint(L,2);
+    int delay=luaL_checkinteger(L,2);
     QMap<int,QRgb> data;
     lua_pushnil(L);
     while(lua_next(L,1)!=0)
@@ -183,8 +183,8 @@ int QP4Handler::embed()
             lua_pop(L,1);
         }
     }
-    z=luaL_checkint(L,4);
-    t=luaL_checkint(L,5);
+    z=luaL_checkinteger(L,4);
+    t=luaL_checkinteger(L,5);
 
     Embed* embed=new Embed;
     embed->clip=repository_[name];
