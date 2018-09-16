@@ -1,0 +1,21 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource>
+<!-- svg-t nem tud autodetectelni a Qt tartalom alapján -->
+
+<!-- playcontrols -->
+<file alias="icons/play.svg">../../resources/icons/go-next-view_mod.svg</file>
+<file alias="icons/stop.svg">../../resources/icons/application-exit_mod.svg</file>
+<file alias="icons/pause.svg">../../resources/icons/pause_new.svg</file>
+<file alias="icons/pausenow.svg">../../resources/icons/pausenow_new.svg</file>
+<file alias="icons/prev.svg">../../resources/icons/go-first-view-page_mod.svg</file>
+<file alias="icons/next.svg">../../resources/icons/go-last-view-page_mod.svg</file>
+
+<!-- playlist -->
+<file alias="icons/add.svg">../../resources/icons/list-add_22.svg</file>
+<file alias="icons/remove.svg">../../resources/icons/list-remove_22.svg</file>
+<file alias="icons/up.svg">../../resources/icons/go-up.svg</file>
+<file alias="icons/down.svg">../../resources/icons/go-down.svg</file>
+
+</qresource>
+</RCC>

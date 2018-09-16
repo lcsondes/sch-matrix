@@ -1,0 +1,33 @@
+﻿Az MNP4-ről
+===========
+
+Az MNP4 (Matrix Network Protocol, v4) egy csomagalapú protokoll, a kliens-szerver kommunikáció protokollja, TCP vagy UDP felett.
+
+A csomagok formátuma a következő:
+
+0                                  32
++--------+--------+--------+--------+
+|'M'     |'N'     |'P'     |'4'     |
++--------+--------+--------+--------+
+|Csomag típusa, szintén 4 karakter  |
++-----------------------------------+
+|Payload mérete byte-ban, 32-bit LE |
++-----------------------------------+
+|Payload                            |
+|                                   |
+
+A támogatott csomagok dokumentációért keresd az int_libs/mnp4/*/packets mappákat. A protokollt nem verziózzuk, a visszafele kompatibilitás nem szempont, mivel mi döntjük el, hogy mi lehet a hálózatunkon.
+
+Minden MNP4-et használó program a 3172-es porton listenel (TCP+UDP).
+A csomagok közlekedhetnek UDP csomagban, illetve TCP streamben.
+
+TCP-t a MNP4FREM-hez használunk a mérete miatt, illetve az MNP4CTRL-nél a megbízható átvitel miatt, egyébként az UDP preferált.
+
+Amit nem tud
+------------
+
+Biztonság. Mivel csak a saját hálózatunkon kommunikál, megbízik mindenkiben. Ha valaki vicces kedvében van, ez rosszul sülhet el, de eddig erre nem volt példa, és nem is számítunk rá.
+
+Javasolt megoldás #1: MNP4 csomagba egy magic int, ami nem egyezősége esetén a csomag nem dolgozódik fel
+
+Javasolt megoldás #2: MNP4AUTH implementálása. Lehet pl. szerver által generált nonce, amit rádión mondunk meg a másik oldalnak.

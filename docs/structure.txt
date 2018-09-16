@@ -1,0 +1,100 @@
+﻿Struktúra
+=======================================
+
+Háromféle kód van: saját, internal lib, external lib.
+
+Internal libnek számít a QtIOCompressor is: ezt már nem fejlesztik, így eltettünk belőle egy példányt.
+
+Internal libek
+=======================================
+
+Jelenleg kettő ilyen van: a libqtiocompressor, és a libmnp4. Ezek minden app rendelkezésére állnak (és érdemes is a libmnp4-re építeni mindent, amit csak lehet).
+
+QtIOCompressor
+--------------
+Egy kis osztály, amivel QIODevice-ként lehet olvasni zlib-bel tömörített fájlokból. A Q4Z/Q4X-hez használjuk, elkerülendő a teljes fájl memóriába olvasását a qDecompress()-hez.
+
+libMNP4
+-------
+Minden lelke. Ebben van implementálva maga a Mátrix (minden program közös nevezője). Amit tud:
+
+* MNP4 teljes implementációja, szerializáció/deszerializáció-supporttal.
+  * Szerver-mód (annyira, hogy az MxServer ezt csak használja, semmi extrát nem tud ilyen téren)
+  * Kliens-mód (kényelmi osztállyal az esetleges 3rd-party programokhoz (MNClient)
+* Animáció-cache (MCAnimLoader), rossz hálózat esetére (minimális adatforgalom szükséges csak ilyenkor, 300 baudos akusztikus modemnek elégnek kell rá lennie)
+* Animáció-bufferelés és -lejátszás (MCAnimPlayer), tökéletes A-V sync-kel (tapasztalat szerint <=1ms pontossággal. A hálózati latency nem érdekli, a jittert viszont nem szereti, de jól tűri)
+* Szabadon bővíthető konfigurációs rendszer (MCConfig). Mivel egy provider-függvényt kell neki írni, maga a konfiguráció lehet akármi. INI van implementálva a legtöbb programban (az AnimEditorban drótozva van, hogy ne legyen +1 fájl), de lehet XML-es is, ha ez minden vágyad.
+* Csomagelosztó (MCEventDispatcher). A beérkező csomagok megfelelő helyre eljuttatását végzi, a Qt Signals and Slots rendszerre építve.
+* Ping, és állapotlekérés (MCReplier)
+* Pontos idő (MCTime). A platformon elérhető legpontosabb órát használja, kimenete egy 0-tól növekvő msec counter. Ha idő kell, innen vedd!
+
+External libek
+=======================================
+
+Jelenleg ezekből is kettő van, az FMOD Ex, és a Lua.
+
+Az FMOD Ex egy teljes audio engine, amit általában olyan kis garázscégek szoktak használni a játékaikhoz, mint pl. a Blizzard vagy a Crytek. Nem kereskedelmi felhasználásra ingyen elérhető. A hanglejátszást intézzük vele (mxclient, animeditor). Elég pici ahhoz, hogy ne legyen overkill, ellenben nagyon kényelmes.
+A C++ API-ja MinGW alatt nem elérhető, ezért a C-s API-t használjuk.
+
+A Lua egy kifejezetten beágyazásra szánt szkriptnyelv, leghíresebb alkalmazása talán a WoW.
+Igazából nincs szükségünk rá, de akkora a menőségfaktor abban, hogy programnyelv az animeditor formátuma, hogy betettük. Titkos vágyunk méretkorlátozott demókat látni a Mátrixon.
+
+Appok
+=======================================
+
+A lényeg! A repóban jelenleg négy app található. Ezek:
+
+AnimEditor
+----------
+
+Az animációszerkesztő program, az egyetlen, amit nyilvánosan is kiadunk.
+Rendelkezik külön doksival is, ez LaTeX-ben íródott.
+
+Deploymenthez szükséges: statikus animeditor.exe, fmodex.dll, animeditor.pdf
+
+Pirospont annak, aki megoldja, hogy az fmodex.dll-t ne kelljen a program mellé tenni (úgy, hogy nem tömöríti ki magából induláskor, az béna)
+
+libMNP4-re épül a program. Szokás Mátrixra csinálni egy spéci animeditort, ami kiküldi a benne rajzolt dolgokat a hálózatra (lehet pl. realtime rajzolgatni a kijelzőre, de főleg hardverhiba-keresésre használjuk). A libMNP4 miatt ez könnyen kivitelezhető. Egyéb dolgokra is használjuk, pl. pontos idő. A nyilvánosan kiküldött változat nem használja a hálózatot, nem is szabad neki.
+
+Nem dokumentált funkciók:
+
+1) többnyelvűség. A programot angolul írjuk meg, mert aki nem ezt csinálja, azt máglyán kell elégetni, ellenben a kiküldött változat magyarra kapcsolja magát mindig. Na jó, ezt használhatja a nép, csak semmi értelme.
+
+2) Command line kapcsolók:
+-noendworkaround (clip.cpp) Máshogy kezelte a klipek végét terv szerint, de jelenleg nem használt.
+-noroundtohw (palette.cpp) Kikapcsolja a színkerekítést az SCH-s ablakban.
+-sideaudio (qp4handler.cpp) Automatikusan betölti a .qp4/.q4z-nek megfelelő nevű hangfájlt, ha talál olyat mellette. A végtelenül okos qpázók miatt kellett még a Q4X feltalálása előtt.
+
+MxServer
+--------
+
+A szerverprogramunk, ami egy kis wrapper a libmnp4 körül, plusz a MUEB-protokoll implementálva van benne. 'nuff said.
+
+MxClient
+--------
+
+A kliensprogramunk (de lehetséges más klienst is használni, pl. ha valaki játékot ír a Mátrixra). Playlistet és hanglejátszást, valamit a szervert kezeli.
+Tud bármilyen animációt streamelni a szerverre, és tökéletes A-V sync-kel lejátszani (powered by libMNP4), valamint képes használni a szerver cache-ét is.
+
+A GUI-ja félrekattintás ellen többé-kevésbé védett, ezért van a csomó checkbox.
+
+Q4Xtract
+--------
+
+Az AnimEditor által kiexportált Q4X fájlokat szedi szét QP4+QPR+hang fájlokra. Hasznos, ha valamit elrontott mondjuk egy szponzor, és nekünk kell kézzel fixelni.
+
+Elveszett appok
+===================
+
+Ezek valamelyik SEM-es vinyón laktak/laknak. Ha megtalálja valaki, commitolja be!
+
+Packet sniffer 1,2
+------------------
+
+Ezek tudnak rendre MNP4-ül és MUEB-ül, az AnimEditor SchWidget-jére (ami külön ablakban él, az AnimEditor nélkül) folyamatosan kiteszik, hogy mit kéne látni épp (sniffer 1 esetén az frame delayt is tudja). Hálózati debugoláshoz hasznos.
+Készült belőle egy .NET-es alternatíva, ami ugyanúgy használható, ellenben nem olyan szép.
+
+Mókolt AnimEditor
+-----------------
+
+Az AnimEditor automatikusan transmittelő változata, ahogy korábban leírtam.

@@ -1,0 +1,54 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource>
+<file alias="pics/sch">../../resources/sch.jpg</file>
+<!-- svg-t nem tud autodetectelni a Qt tartalom alapján -->
+<file alias="icons/play.svg">../../resources/icons/go-next-view_mod.svg</file>
+<file alias="icons/stop.svg">../../resources/icons/application-exit_mod.svg</file>
+<file alias="icons/next.svg">../../resources/icons/go-next.svg</file>
+<file alias="icons/prev.svg">../../resources/icons/go-previous.svg</file>
+<file alias="icons/first.svg">../../resources/icons/go-first-view.svg</file>
+<file alias="icons/last.svg">../../resources/icons/go-last-view.svg</file>
+<file alias="icons/anim.svg">../../resources/icons/tool-animator.svg</file>
+<file alias="icons/newanim.svg">../../resources/icons/tool-animator_modplus.svg</file>
+<file alias="icons/delanim.svg">../../resources/icons/tool-animator_modx.svg</file>
+<file alias="icons/exit.svg">../../resources/icons/system-shutdown.svg</file>
+<file alias="icons/new.svg">../../resources/icons/document-new.svg</file>
+<file alias="icons/open.svg">../../resources/icons/document-open.svg</file>
+<file alias="icons/save.svg">../../resources/icons/document-save.svg</file>
+<file alias="icons/saveas.svg">../../resources/icons/document-save-as.svg</file>
+<file alias="icons/export.svg">../../resources/icons/package-x-generic_mod.svg</file>
+<file alias="icons/about.svg">../../resources/icons/view-loan-asset.svg</file>
+<file alias="icons/add.svg">../../resources/icons/list-add_22.svg</file>
+<file alias="icons/remove.svg">../../resources/icons/list-remove_22.svg</file>
+<file alias="icons/show.svg">../../resources/icons/layer-visible-on.svg</file>
+<file alias="icons/hide.svg">../../resources/icons/layer-visible-off.svg</file>
+<file alias="icons/up.svg">../../resources/icons/go-up.svg</file>
+<file alias="icons/down.svg">../../resources/icons/go-down.svg</file>
+<file alias="icons/moveup.svg">../../resources/icons/go-up_red.svg</file>
+<file alias="icons/movedown.svg">../../resources/icons/go-down_red.svg</file>
+<file alias="icons/moveleft.svg">../../resources/icons/go-previous_red.svg</file>
+<file alias="icons/moveright.svg">../../resources/icons/go-next_red.svg</file>
+<file alias="icons/audio.svg">../../resources/icons/audio.svg</file>
+<file alias="icons/pencil.svg">../../resources/icons/draw-freehand.svg</file>
+<file alias="icons/brush.svg">../../resources/icons/draw-brush.svg</file>
+<file alias="icons/ellipse.svg">../../resources/icons/draw-ellipse.svg</file>
+<file alias="icons/rectangle.svg">../../resources/icons/draw-rectangle.svg</file>
+<file alias="icons/fill.svg">../../resources/icons/fill-color_mod.svg</file>
+<file alias="icons/line.svg">../../resources/icons/draw-line.svg</file>
+<file alias="icons/text.svg">../../resources/icons/draw-text.svg</file>
+<file alias="icons/nextkey.svg">../../resources/icons/go-last-view-page_mod.svg</file>
+<file alias="icons/prevkey.svg">../../resources/icons/go-first-view-page_mod.svg</file>
+<file alias="icons/addkey.svg">../../resources/icons/dialog-password_modplus.svg</file>
+<file alias="icons/delkey.svg">../../resources/icons/dialog-password_modx.svg</file>
+<!--<file alias="icons/addframe.svg">../../resources/icons/document-new_mod.svg</file>-->
+<file alias="icons/windowmode.svg">../../resources/icons/draw-rectangle_x4_window.svg</file>
+<file alias="icons/pixelmode.svg">../../resources/icons/draw-rectangle_x4_pixel.svg</file>
+<file alias="icons/wipeframe.svg">../../resources/icons/document-new_moderaser.svg</file>
+<file alias="icons/copyframe.svg">../../resources/icons/document-new_modarrow.svg</file>
+<file alias="icons/delframe.svg">../../resources/icons/document-new_modx.svg</file>
+<file alias="icons/paper.svg">../../resources/icons/application-x-zerosize.svg</file>
+<file alias="icons/copy.svg">../../resources/icons/edit-copy.svg</file>
+<file alias="icons/paste.svg">../../resources/icons/edit-paste.svg</file>
+</qresource>
+</RCC>
