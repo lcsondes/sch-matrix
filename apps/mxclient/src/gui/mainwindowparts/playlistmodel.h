@@ -32,7 +32,7 @@ public:
     {
         QString filename;
         QString title;
-        int length; //ms
+        unsigned int length; //ms
         enum
         {
             NOTHING,

@@ -30,7 +30,7 @@
  * Egyetlen animáció tárolására képes, ha többet szeretnél, használd pl.
  * az #MCAnimLoader-t gyors váltáshoz.
  */
-class MCAnimPlayer : public QThread
+class MNP4_EXPORT MCAnimPlayer : public QThread
 {
     Q_OBJECT
     DECLARE_MNP_INITIALIZABLE(MCAnimPlayer);

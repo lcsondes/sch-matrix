@@ -24,7 +24,7 @@
 /**
  * A lejátszás vezérlésére szolgáló csomag.
  */
-class MPControl : public MPacket
+class MNP4_EXPORT MPControl : public MPacket
 {
 DECLARE_MNP_PACKET(MPControl);
 

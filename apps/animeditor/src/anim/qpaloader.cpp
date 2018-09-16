@@ -68,7 +68,7 @@ bool QpaLoader::load(SceneTree* st,QString fileName,QString* error,
             for(int x=0;x<QPAWIDTH;x++)
             {
                 QRgb value;
-                switch(line[x].toAscii())
+                switch(line[x].toLatin1())
                 {
                     case '.':
                         value=a;

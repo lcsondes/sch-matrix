@@ -25,7 +25,7 @@
  * Státuszlekérő csomag a szerver távoli felügyeletéhez.
  * A lejátszás is használja, főleg a #validFrames mezőt.
  */
-class MPStatus : public MPacket
+class MNP4_EXPORT MPStatus : public MPacket
 {
 DECLARE_MNP_PACKET(MPStatus);
 

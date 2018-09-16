@@ -25,14 +25,14 @@
  * signal-ra van kötve. Ez az egyetlen működőképes módja TCP socketek szálak
  * közti mozgatásának Qt-ben sajnos.
  */
-class MNQTcpServer : public QTcpServer
+class MNP4_EXPORT MNQTcpServer : public QTcpServer
 {
 Q_OBJECT
-    override void incomingConnection(int);
+    override void incomingConnection(qintptr);
 public:
     MNQTcpServer(QObject* parent=NULL);
 signals:
-    void newConnection2(/*ownership*/ int); //a moc nem szereti a makrót
+    void newConnection2(/*ownership*/ qintptr); //a moc nem szereti a makrót
 };
 
 #endif

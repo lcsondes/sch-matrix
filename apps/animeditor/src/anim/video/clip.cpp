@@ -64,12 +64,12 @@ Clip::Clip(const Clip& o)
  */
 Clip::~Clip()
 {
-    qDebug("(Enter destructor of %s)",name_.toAscii().data());
+    qDebug("(Enter destructor of %s)",name_.toLatin1().data());
     for(int i=0;i<children_.count();i++)
     {
         qDebug("Clip <\"%s\"> deletes child no. %d (\"%s\")",
-               this->name_.toAscii().data(),i,
-               children_[i]->clip->name().toAscii().data());
+               this->name_.toLatin1().data(),i,
+               children_[i]->clip->name().toLatin1().data());
         delete children_[i];
     }
     children_.clear();
@@ -77,13 +77,13 @@ Clip::~Clip()
     for(int i=0;i<treeItems_.count();i++)
     {
         qDebug("Clip <\"%s\"> deletes QTWI no. %d",
-               this->name_.toAscii().data(),i);
+               this->name_.toLatin1().data(),i);
         treeItems_[i]->takeChildren();
         delete treeItems_[i];
     }
     treeItems_.clear();
 
-    qDebug(">Clip \"%s\" deleted.",name_.toAscii().data());
+    qDebug(">Clip \"%s\" deleted.",name_.toLatin1().data());
 }
 
 /**

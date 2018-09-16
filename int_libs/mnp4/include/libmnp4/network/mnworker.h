@@ -25,7 +25,7 @@
  * deszerializálásából áll. A csomagok az MCEventDispatcher-be kerülve érik el
  * úticéljukat.
  */
-class MNWorker : public QThread
+class MNP4_EXPORT MNWorker : public QThread
 {
 Q_OBJECT
     void ctor();
@@ -38,7 +38,7 @@ public:
         UDP //kapcsolódni kell a kapott címre
     };
 private:
-    int socketDescriptor_; ///< A socket leírója. TCP esetén kell.
+	qintptr socketDescriptor_; ///< A socket leírója. TCP esetén kell.
     QHostAddress addr_; ///< Válaszcím.
     /**
      * A bejövő csomagot szolgáltató QIODevice. UDP esetén egy QBuffer, TCP
@@ -48,7 +48,7 @@ private:
     QIODevice* dev_;
     ConnectionType type_; ///< A kapcsolat típusa.
 public:
-    MNWorker(QObject*,ownership int,ConnectionType);
+    MNWorker(QObject*,ownership qintptr,ConnectionType);
     MNWorker(QObject*,const QHostAddress&,ownership QIODevice*,ConnectionType);
     ~MNWorker();
     override void run();

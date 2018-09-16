@@ -25,7 +25,7 @@
  * Időszinkronizációra szolgáló csomag. Az algoritmus leírását lásd az
  * mctime.cpp elején található nagy kommentben.
  */
-class MPTime : public MPacket
+class MNP4_EXPORT MPTime : public MPacket
 {
 DECLARE_MNP_PACKET(MPTime);
 protected:

@@ -26,7 +26,7 @@
  * TCP kapcsolatok és UDP csomagok fogadását végző osztály. A feldolgozást is
  * elindítja, de azt az #MNWorker végzi. Singleton.
  */
-class MNServer : public QThread
+class MNP4_EXPORT MNServer : public QThread
 {
 Q_OBJECT
 DECLARE_MNP_INITIALIZABLE(MNServer);
@@ -41,7 +41,7 @@ DECLARE_MNP_INITIALIZABLE(MNServer);
 public:
     static const int PORT=3172; ///< A szerver portja. Találd ki, miért ez! ;)
 private slots:
-    void slotNewTcp(int);
+    void slotNewTcp(qintptr);
     void slotNewUdp();
 };
 

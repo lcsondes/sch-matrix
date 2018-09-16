@@ -1,7 +1,6 @@
 TEMPLATE = app
-TARGET = 
-DEPENDPATH += . src
-INCLUDEPATH += .
+TARGET = mxserver
+INCLUDEPATH += . src
 
 # Input
 HEADERS += src/global.h src/merror.h src/muebserver.h src/pch.h
@@ -12,5 +11,4 @@ QT = core network
 
 CONFIG += console
 
-include(../../config.pri)
-include(../config.pri)
+include(../apps.pri)

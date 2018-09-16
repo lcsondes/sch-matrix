@@ -24,7 +24,7 @@
 /**
  * Animáció lokális fájlból betöltését kérő csomag.
  */
-class MPLoad : public MPacket
+class MNP4_EXPORT MPLoad : public MPacket
 {
 DECLARE_MNP_PACKET(MPLoad);
 protected:

@@ -28,7 +28,7 @@
  * Y            libmnp4.frame.height    A Mátrix magassága pixelben
  *              libmnp4.animpath        A lokális animáció-cache elérési útja
  */
-class MCConfig
+class MNP4_EXPORT MCConfig
 {
 private:
     static MCConfig* instance_; ///<Az egyetlen globális objektum

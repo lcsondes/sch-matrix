@@ -25,7 +25,7 @@
  * Csomagonként elkülöníti a signalokat. A MCEventDispatcher belső osztályának
  * kéne lennie, de a moc nem támogat olyat.
  */
-class MCEmitter : public QObject
+class MNP4_EXPORT MCEmitter : public QObject
 {
 Q_OBJECT
 friend class MCEventDispatcher;

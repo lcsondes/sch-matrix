@@ -29,14 +29,14 @@
  * Singleton, de nem a szokásos makrókkal készült, mert nincs kinek init()-et
  * hívni rajta (a main() előtt már fut)
  */
-class MCEventDispatcher : public QObject
+class MNP4_EXPORT MCEventDispatcher : public QObject
 {
 Q_OBJECT
     static MCEventDispatcher* instance_; ///< Az osztály egyetlen példánya
     MCEventDispatcher();
     ~MCEventDispatcher();
 
-    friend void libmnp_shutdown();
+    friend MNP4_EXPORT void libmnp_shutdown();
     static void shutdown();
 
     QHash<QByteArray,MCEmitter*> emitters_; ///< A signalokat küldő MCEmitterek

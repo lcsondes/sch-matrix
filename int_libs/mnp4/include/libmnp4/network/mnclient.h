@@ -27,7 +27,7 @@
  * paraméter miatt. Singletonként és sima objektumként is használható,
  * akár több is egyszere.
  */
-class MNClient : public QThread
+class MNP4_EXPORT MNClient : public QThread
 {
 Q_OBJECT
 
@@ -51,7 +51,7 @@ private:
 
     static MNClient* globalInstance_; ///< Az osztály nagy közös objektuma.
 
-    friend void libmnp_shutdown();
+    friend void MNP4_EXPORT libmnp_shutdown();
     static void shutdown();
 
     QHostAddress tgt_; ///< A szerver címét tárolja.

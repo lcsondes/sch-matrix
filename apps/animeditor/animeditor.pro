@@ -1,22 +1,23 @@
 TEMPLATE = app
-TARGET = 
-DEPENDPATH += . \
-              src \
-              src\anim \
-              src\gui \
-              src\anim\audio \
-              src\anim\video \
-              src\gui\matrix \
-              src\gui\mdi \
-              src\gui\palette \
-              src\gui\scenetree \
-              src\gui\schwindow \
-              src\gui\textrender \
-              src\gui\tools
-INCLUDEPATH += .
+TARGET = animeditor
+INCLUDEPATH += . \
+               src \
+               src/anim \
+               src/gui \
+               src/anim/audio \
+               src/anim/video \
+               src/gui/matrix \
+               src/gui/mdi \
+               src/gui/palette \
+               src/gui/scenetree \
+               src/gui/schwindow \
+               src/gui/textrender \
+               src/gui/tools
+
+INCLUDEPATH += $$matrix_top_dir/ext_libs/lua/src
 
 # Input
-HEADERS += pch.h \
+HEADERS += src/pch.h \
            src/global.h \
            src/anim/qp4debug.h \
            src/anim/qp4handler.h \
@@ -76,15 +77,14 @@ SOURCES += src/main.cpp \
            src/gui/schwindow/timeline.cpp \
            src/gui/textrender/textrenderdialog.cpp \
            src/gui/tools/tools.cpp
-RESOURCES += gfx.qrc lang.qrc
+RESOURCES += gfx.qrc
 TRANSLATIONS += animeditor_hu.ts
+LIBS += -L$$matrix_top_dir/ext_libs/lua/src -llua
+unix:LIBS += -ldl
 
-QT = core gui svg network
+QT = core widgets svg network
 PRECOMPILED_HEADER = src/pch.h
 
-include(../../config.pri)
-include(../config.pri)
-include(../../ext_libs/fmodex.pri)
-include(../../ext_libs/lua.pri)
-
 mtx_static:QTPLUGIN += qsvg
+
+include(../apps.pri)

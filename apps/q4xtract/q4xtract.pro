@@ -1,7 +1,6 @@
 TEMPLATE = app
-TARGET = 
-DEPENDPATH += . src src\addon
-INCLUDEPATH += .
+TARGET = q4xtract
+INCLUDEPATH += . src src/addon
 
 # Input
 SOURCES += src/main.cpp
@@ -10,5 +9,4 @@ QT = core
 
 CONFIG += console
 
-include(../../config.pri)
-include(../config.pri)
+include(../apps.pri)

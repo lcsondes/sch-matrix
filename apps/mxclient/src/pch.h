@@ -16,6 +16,6 @@
  */
 
 #include <QtCore>
-#include <QtGui>
+#include <QtWidgets>
 #include <QtNetwork>
 #include <fmod.hpp>

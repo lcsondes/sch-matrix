@@ -28,7 +28,7 @@
  *
  * Vagy az #MCAnimPlayer bufferébe kerül, vagy egyből ki a képre, a #seq-től függően.
  */
-class MPFrame : public MPacket
+class MNP4_EXPORT MPFrame : public MPacket
 {
 DECLARE_MNP_PACKET(MPFrame);
 private:
@@ -36,8 +36,8 @@ private:
     void copy(const MPFrame&);
     void dtor();
 
-    friend void libmnp_init(QVariant(*)(QString));
-    friend void libmnp_shutdown();
+    friend void MNP4_EXPORT libmnp_init(QVariant(*)(QString));
+    friend void MNP4_EXPORT libmnp_shutdown();
     static void init();
     static void shutdown();
 

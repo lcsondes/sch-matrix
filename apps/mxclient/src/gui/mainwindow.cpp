@@ -22,7 +22,7 @@ MainWindow::MainWindow()
 {
     setWindowTitle(tr("Matrix Player 2012 shitty edition"));
     splitter_=new QSplitter(this);
-    splitter_->setStyle(new QPlastiqueStyle); //TODO memleak
+    //splitter_->setStyle(new QPlastiqueStyle); //TODO memleak
     setCentralWidget(splitter_);
 
     //docks

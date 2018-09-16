@@ -29,7 +29,7 @@
  * így nem kell kétféle kódot megírni a streamelt és betöltött animációkhoz,
  * továbbá részleges cache is lehetséges (az első x frame cache-ből, utána stream)
  */
-class MCAnimLoader : public QObject
+class MNP4_EXPORT MCAnimLoader : public QObject
 {
     Q_OBJECT
     DECLARE_MNP_INITIALIZABLE(MCAnimLoader);

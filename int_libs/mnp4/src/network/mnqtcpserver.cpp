@@ -25,7 +25,7 @@ MNQTcpServer::MNQTcpServer(QObject* parent)
 /**
  * Elsüti a newConnection2 signal-t a kapott inttel.
  */
-void MNQTcpServer::incomingConnection(int s)
+void MNQTcpServer::incomingConnection(qintptr s)
 {
     emit newConnection2(s);
 }

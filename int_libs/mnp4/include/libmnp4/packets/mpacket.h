@@ -28,7 +28,7 @@
  * DECLARE_MNP_PACKET makrót, a .cpp fájlban pedig egy DEFINE_MNP_PACKET makrót,
  * továbbá egyedi ID-vel és default konstruktorral kell rendelkezniük.
  */
-class MPacket
+class MNP4_EXPORT MPacket
 {
     ///A leszármazott osztályok létrehozófüggvényei
     static QHash<QByteArray,MPacket*(*)(void)>* creators_;

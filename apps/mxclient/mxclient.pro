@@ -1,15 +1,14 @@
 TEMPLATE = app
-TARGET = 
-DEPENDPATH += . \
-              src \
-              src\core \
-              src\gui \
-              src\gui\mainwindowparts \
-              src\gui\playcontrols \
-              src\gui\safebutton \
-              src\gui\serverpane \
-              src\gui\timeline
-INCLUDEPATH += .
+TARGET = mxclient
+INCLUDEPATH += . \
+               src \
+               src/core \
+               src/gui \
+               src/gui/mainwindowparts \
+               src/gui/playcontrols \
+               src/gui/safebutton \
+               src/gui/serverpane \
+               src/gui/timeline
 
 # Input
 HEADERS += src/global.h \
@@ -38,10 +37,8 @@ SOURCES += src/main.cpp \
 RESOURCES += mxclient.qrc
 PRECOMPILED_HEADER = src/pch.h
 
-QT = core gui svg network
-
-include(../../config.pri)
-include(../config.pri)
-include(../../ext_libs/fmodex.pri)
+QT = core widgets svg network
 
 mtx_static:QTPLUGIN += qsvg
+
+include(../apps.pri)

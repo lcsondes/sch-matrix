@@ -49,7 +49,7 @@ static QVariant readSetting(QString key)
 int main(int argc,char** argv)
 {
     QApplication app(argc,argv);
-    QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
+    //QTextCodec::setCodecForTr(QTextCodec::codecForName("UTF-8"));
     {
     bool english=false;
     for(int i=1;i<argc;++i)

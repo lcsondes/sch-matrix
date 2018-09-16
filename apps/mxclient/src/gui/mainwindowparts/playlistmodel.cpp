@@ -209,14 +209,14 @@ void PlayListModel::setNext(const QModelIndex& idx)
             if(f.flags==Entry::NEXT)
             {
                 f.flags=Entry::NOTHING;
-                emit dataChanged(createIndex(i,3,0),
-                                 createIndex(i,3,0));
+                emit dataChanged(createIndex(i,3),
+                                 createIndex(i,3));
                 break;
             }
         }
         e.flags=Entry::NEXT;
-        emit dataChanged(createIndex(row,3,0),
-                         createIndex(row,3,0));
+        emit dataChanged(createIndex(row,3),
+                         createIndex(row,3));
     }
 }
 
@@ -264,8 +264,8 @@ void PlayListModel::currentAnimEnded()
     if(nowPlayingIdx>=0)
     {
         entries_[nowPlayingIdx].flags=Entry::NOTHING;
-        emit dataChanged(createIndex(nowPlayingIdx,3,0),
-                         createIndex(nowPlayingIdx,3,0));
+        emit dataChanged(createIndex(nowPlayingIdx,3),
+                         createIndex(nowPlayingIdx,3));
     }
 }
 
@@ -276,14 +276,14 @@ void PlayListModel::rewindCurrentAnim()
         if(entries_[i].flags==Entry::NOW_PLAYING)
         {
             entries_[i].flags=Entry::NEXT;
-            emit dataChanged(createIndex(i,3,0),
-                             createIndex(i,3.0));
+            emit dataChanged(createIndex(i,3),
+                             createIndex(i,3));
         }
         else if(entries_[i].flags==Entry::NEXT)
         {
             entries_[i].flags=Entry::NOTHING;
-            emit dataChanged(createIndex(i,3,0),
-                             createIndex(i,3,0));
+            emit dataChanged(createIndex(i,3),
+                             createIndex(i,3));
         }
     }
 }
@@ -302,13 +302,13 @@ void PlayListModel::selectNextAnim()
     if(!entries_.isEmpty())
     {
         entries_[nextIdx].flags=Entry::NOW_PLAYING;
-        emit dataChanged(createIndex(nextIdx,3,0),
-                         createIndex(nextIdx,3,0));
+        emit dataChanged(createIndex(nextIdx,3),
+                         createIndex(nextIdx,3));
         if(nextIdx+1<entries_.size())
         {
             entries_[nextIdx+1].flags=Entry::NEXT;
-            emit dataChanged(createIndex(nextIdx+1,3,0),
-                             createIndex(nextIdx+1,3,0));
+            emit dataChanged(createIndex(nextIdx+1,3),
+                             createIndex(nextIdx+1,3));
         }
     }
 }
@@ -327,8 +327,8 @@ void PlayListModel::moveNext(int dir)
     if(nextIdx>=0&&nextIdx<entries_.size())
     {
         entries_[nextIdx].flags=Entry::NOTHING;
-        emit dataChanged(createIndex(nextIdx,3,0),
-                         createIndex(nextIdx,3,0));
+        emit dataChanged(createIndex(nextIdx,3),
+                         createIndex(nextIdx,3));
     }
 retry:;
     nextIdx+=dir;
@@ -337,8 +337,8 @@ retry:;
         if(entries_[nextIdx].flags!=Entry::NOW_PLAYING)
         {
             entries_[nextIdx].flags=Entry::NEXT;
-            emit dataChanged(createIndex(nextIdx,3,0),
-                             createIndex(nextIdx,3,0));
+            emit dataChanged(createIndex(nextIdx,3),
+                             createIndex(nextIdx,3));
         }
         else
         {

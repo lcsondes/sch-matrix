@@ -1,7 +1,0 @@
-<!DOCTYPE RCC>
-<RCC version="1.0">
-<qresource>
-<file alias="animeditor_hu.qm">animeditor_hu.qm</file>
-<file alias="qt_hu.qm">../../resources/qt_hu.qm</file>
-</qresource>
-</RCC>

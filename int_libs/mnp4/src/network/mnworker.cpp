@@ -29,7 +29,7 @@ void MNWorker::ctor()
 /**
  * "TCP konstruktor". A QTcpSocket létrehozása már a másik szálban történik.
  */
-MNWorker::MNWorker(QObject* parent,int socketDescriptor,ConnectionType type)
+MNWorker::MNWorker(QObject* parent,qintptr socketDescriptor,ConnectionType type)
     :QThread(parent),socketDescriptor_(socketDescriptor),type_(type)
 {
     ctor();
@@ -81,6 +81,5 @@ void MNWorker::run()
         MCEventDispatcher::instance()->dispatch(ownership packet,addr_);
     }
 end:;
-    //TODO delete this somehow
-    //delete this;
+    deleteLater();
 }

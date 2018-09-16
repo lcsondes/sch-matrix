@@ -1,15 +1,17 @@
 TEMPLATE = lib
-TARGET = 
-DEPENDPATH += . \
-              src \
-              include\libmnp4 \
-              src\core \
-              src\network \
-              src\packets \
-              include\libmnp4\addon \
-              include\libmnp4\core \
-              include\libmnp4\network \
-              include\libmnp4\packets
+TARGET = mnp4
+INCLUDEPATH += . \
+               src \
+               include/libmnp4 \
+               src/core \
+               src/network \
+               src/packets \
+               include/libmnp4/addon \
+               include/libmnp4/core \
+               include/libmnp4/network \
+               include/libmnp4/packets
+
+INCLUDEPATH += $$matrix_top_dir/int_libs/qtiocompressor
 
 # Input
 HEADERS += include/libmnp4/global.h \
@@ -57,5 +59,7 @@ SOURCES += src/init.cpp \
 
 QT = core network
 INCLUDEPATH += include
+DEFINES += MNP4_LIBRARY
+LIBS += -L$$matrix_top_dir/dist -lqtiocompressor
 
-include(../../config.pri)
+include(../int_libs.pri)

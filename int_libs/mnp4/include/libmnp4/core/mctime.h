@@ -31,7 +31,7 @@
  * bites egészként is.
  * 32 biten kb. 24 napig, 64 biten kb. 290 millió évig bírja overflow nélkül.
  */
-class MCTime : public QThread
+class MNP4_EXPORT MCTime : public QThread
 {
 Q_OBJECT
 DECLARE_MNP_INITIALIZABLE(MCTime);

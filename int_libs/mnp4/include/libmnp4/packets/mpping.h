@@ -24,7 +24,7 @@
 /**
  * Életjel küldésére szolgáló csomag.
  */
-class MPPing : public MPacket
+class MNP4_EXPORT MPPing : public MPacket
 {
 DECLARE_MNP_PACKET(MPPing);
 

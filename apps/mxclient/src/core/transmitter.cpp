@@ -47,7 +47,6 @@ Transmitter::~Transmitter()
 {
     quit();
     wait();
-    delete sock_;
 }
 
 void Transmitter::transmit(const QList<MPFrame>& frames)
@@ -62,9 +61,13 @@ void Transmitter::run()
 {
     sock_=new QTcpSocket(this);
     sock_->connectToHost(tgt_,MNServer::PORT);
+	sock_->waitForConnected(); // Qt 5 óta ezt muszáj kivárni, nem bufferel előre
     for(int i=0;i<frames_.size();++i)
     {
         frames_[i].save(sock_);
     }
     exec(); //és most várunk
+
+	//erről a szálról érdemes megölni
+	delete sock_;
 }

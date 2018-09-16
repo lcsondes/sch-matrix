@@ -25,4 +25,10 @@
 #define ownership //azt jelzi, hogy a pointerrel a tulajdonjog is megy
 #define override //azt jelzi, hogy egy virtuális függvényt definiál felül
 
+#ifdef MNP4_LIBRARY
+#define MNP4_EXPORT Q_DECL_EXPORT
+#else
+#define MNP4_EXPORT Q_DECL_IMPORT
+#endif
+
 #endif

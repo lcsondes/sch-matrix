@@ -61,7 +61,7 @@ void MNServer::run()
         qFatal("UDP couldn't bind to port %d",PORT);
     }else qDebug("UDP listening on port %d",PORT);
 
-    connect(tcp_,SIGNAL(newConnection2(int)),this,SLOT(slotNewTcp(int)));
+    connect(tcp_,SIGNAL(newConnection2(qintptr)),this,SLOT(slotNewTcp(qintptr)));
     connect(udp_,SIGNAL(readyRead()),this,SLOT(slotNewUdp()));
 
     exec();
@@ -74,7 +74,7 @@ void MNServer::run()
 /**
  * A kapott TCP kapcsolatra ráállít egy MNWorker-t.
  */
-void MNServer::slotNewTcp(int socketDescriptor)
+void MNServer::slotNewTcp(qintptr socketDescriptor)
 {
     //qDebug("MNServer: incoming TCP connection");
     (new MNWorker(this,socketDescriptor,MNWorker::TCP))->start();

@@ -27,7 +27,7 @@
  * MPPing és MPStatus csomagokat intéz: válaszol rájuk, illetve az érkezett
  * válaszokra biztosít egy signal-t.
  */
-class MCReplier : public QObject
+class MNP4_EXPORT MCReplier : public QObject
 {
 Q_OBJECT
 DECLARE_MNP_INITIALIZABLE(MCReplier);

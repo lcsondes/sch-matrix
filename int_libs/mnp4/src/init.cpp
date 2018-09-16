@@ -34,7 +34,7 @@
  * Inicializálja a libraryt. Meg kell hívni, mielőtt bármi mást csinálnál.
  * \param cfg Függvény, ami konfigurációs értékeket szállít a libnek. Lásd #MCConfig
  */
-void libmnp_init(QVariant(*cfg)(QString))
+void MNP4_EXPORT libmnp_init(QVariant(*cfg)(QString))
 {
     //ez az MCEventDispatcher-nek kell
     qRegisterMetaType<QHostAddress>("QHostAddress");
@@ -52,7 +52,7 @@ void libmnp_init(QVariant(*cfg)(QString))
 /**
  * Leállítja a libraryt. Kilépés előtt érdemes meghívni.
  */
-void libmnp_shutdown()
+void MNP4_EXPORT libmnp_shutdown()
 {
     //kliens
     MNClient::shutdown();
@@ -84,7 +84,7 @@ static void libmnp_start_common()
 /**
  * Elindítja a szerver-üzemmódot.
  */
-void libmnp_start_server()
+void MNP4_EXPORT libmnp_start_server()
 {
     libmnp_start_common();
     MCAnimPlayer::init();
@@ -97,7 +97,7 @@ void libmnp_start_server()
  * hívni (sőt, nem is szabad).
  * \param addr A szerver IP-címe.
  */
-void libmnp_start_client(const QHostAddress& tgt)
+void MNP4_EXPORT libmnp_start_client(const QHostAddress& tgt)
 {
     libmnp_start_common();
     MNClient::init(tgt);
