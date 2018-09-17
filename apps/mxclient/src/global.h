@@ -20,8 +20,6 @@
 
 #include "pch.h"
 
-#define override
-
 inline QString hms(int ms)
 {
     QTime t(0,0);

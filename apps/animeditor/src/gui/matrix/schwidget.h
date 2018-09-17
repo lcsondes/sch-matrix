@@ -70,7 +70,7 @@ Q_OBJECT
     void ctor();
 
 public:
-    override void resizeEvent(QResizeEvent*);
+    void resizeEvent(QResizeEvent*) override;
 
     static /*const*/ uint WIDTH/*=0*/;
     static /*const*/ uint HEIGHT/*=0*/;
@@ -87,9 +87,9 @@ public:
     void showFrame(Frame* frame);
 
     bool isEditable();
-    override void mousePressEvent(QMouseEvent*);
-    override void mouseMoveEvent(QMouseEvent*);
-    override void mouseReleaseEvent(QMouseEvent*);
+    void mousePressEvent(QMouseEvent*) override;
+    void mouseMoveEvent(QMouseEvent*) override;
+    void mouseReleaseEvent(QMouseEvent*) override;
 
 public slots:
     void setEditable(bool);

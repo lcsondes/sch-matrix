@@ -28,7 +28,7 @@
 class MNP4_EXPORT MNQTcpServer : public QTcpServer
 {
 Q_OBJECT
-    override void incomingConnection(qintptr);
+    void incomingConnection(qintptr) override;
 public:
     MNQTcpServer(QObject* parent=NULL);
 signals:

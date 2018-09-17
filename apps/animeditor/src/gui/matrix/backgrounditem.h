@@ -25,10 +25,10 @@ class BackgroundItem : public QGraphicsItem
     QGraphicsItem* bg_;
     Qt::MouseButton pressedButton_;
 public:
-//    override void mousePressEvent(QGraphicsSceneMouseEvent*);
-//    override void mouseMoveEvent(QGraphicsSceneMouseEvent*);
-    override QRectF boundingRect() const;
-    override void paint(QPainter*,const QStyleOptionGraphicsItem*,QWidget*);
+//    void mousePressEvent(QGraphicsSceneMouseEvent*) override;
+//    void mouseMoveEvent(QGraphicsSceneMouseEvent*) override;
+    QRectF boundingRect() const override;
+    void paint(QPainter*,const QStyleOptionGraphicsItem*,QWidget*) override;
 
     BackgroundItem(const QPixmap&,QGraphicsItem* parent=NULL);
 };

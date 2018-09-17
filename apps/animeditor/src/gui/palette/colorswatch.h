@@ -29,10 +29,10 @@ Q_OBJECT
     QBrush background_;
     QRgb color_;
 protected:
-    override void contextMenuEvent(QContextMenuEvent*);
-    override void resizeEvent(QResizeEvent*);
-    override void paintEvent(QPaintEvent*);
-    override void mousePressEvent(QMouseEvent*);
+    void contextMenuEvent(QContextMenuEvent*) override;
+    void resizeEvent(QResizeEvent*) override;
+    void paintEvent(QPaintEvent*) override;
+    void mousePressEvent(QMouseEvent*) override;
 public:
     static const int SIZE=16;
     ColorSwatch(QWidget* parent=NULL);

@@ -35,14 +35,14 @@ Q_OBJECT
 public:
     static const int SIZE=8; //legyen páros
 
-    override void paint(QPainter*,const QStyleOptionGraphicsItem*,QWidget*);
-    override void dragEnterEvent(QGraphicsSceneDragDropEvent*);
-    override void dragLeaveEvent(QGraphicsSceneDragDropEvent*);
-    override void dropEvent(QGraphicsSceneDragDropEvent*);
-    override QRectF boundingRect() const;
-    override void mousePressEvent(QGraphicsSceneMouseEvent*);
+    void paint(QPainter*,const QStyleOptionGraphicsItem*,QWidget*) override;
+    void dragEnterEvent(QGraphicsSceneDragDropEvent*) override;
+    void dragLeaveEvent(QGraphicsSceneDragDropEvent*) override;
+    void dropEvent(QGraphicsSceneDragDropEvent*) override;
+    QRectF boundingRect() const override;
+    void mousePressEvent(QGraphicsSceneMouseEvent*) override;
     static const int TYPE=QGraphicsItem::UserType+42; //azért, mert csak™
-    override int type() const;
+    int type() const override;
     PixelItem(int,int,bool transparent,QGraphicsItem* parent=NULL);
     QRgb color() const;
     void setColor(QRgb,bool persistent=false);

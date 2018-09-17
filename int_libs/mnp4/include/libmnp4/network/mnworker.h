@@ -51,7 +51,7 @@ public:
     MNWorker(QObject*,ownership qintptr,ConnectionType);
     MNWorker(QObject*,const QHostAddress&,ownership QIODevice*,ConnectionType);
     ~MNWorker();
-    override void run();
+    void run() override;
 };
 
 #endif

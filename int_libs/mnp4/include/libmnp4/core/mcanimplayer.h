@@ -55,7 +55,7 @@ class MNP4_EXPORT MCAnimPlayer : public QThread
     qint64 pausedAt_; ///< A lejátszás szüneteltésének időpontja
     qint64 sumDelays_; ///< Ennyi idővel a startedAt_ után jön a következő kép
 
-    override void run();
+    void run() override;
 protected slots:
     void tick();
 public:

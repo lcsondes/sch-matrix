@@ -33,7 +33,7 @@ Q_OBJECT
     
     void ctor(QHostAddress);
     
-    override void run();
+    void run() override;
 public:
     Transmitter(QHostAddress _=QHostAddress());
     Transmitter(const QList<MPFrame>&,QHostAddress _=QHostAddress());

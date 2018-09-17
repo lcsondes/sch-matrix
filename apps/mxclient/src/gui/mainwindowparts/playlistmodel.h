@@ -54,10 +54,10 @@ public:
     QString currentFile() const;
     quint32 currentLength() const;
 
-    override int rowCount(const QModelIndex&) const;
-    override int columnCount(const QModelIndex&) const;
-    override QVariant headerData(int,Qt::Orientation,int role) const;
-    override QVariant data(const QModelIndex&,int) const;
+    int rowCount(const QModelIndex&) const override;
+    int columnCount(const QModelIndex&) const override;
+    QVariant headerData(int,Qt::Orientation,int role) const override;
+    QVariant data(const QModelIndex&,int) const override;
 public slots:
     void addFile(QString);
     void moveUp(int);

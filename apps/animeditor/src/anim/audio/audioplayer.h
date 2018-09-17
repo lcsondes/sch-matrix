@@ -37,7 +37,7 @@ Q_OBJECT
     QTimer* tickTimer_;
     qint64 startedAt_;
 
-    override void run();
+    void run() override;
     
     void fmod_init();
     AudioPlayer(int tag);

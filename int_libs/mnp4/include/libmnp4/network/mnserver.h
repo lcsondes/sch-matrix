@@ -37,7 +37,7 @@ DECLARE_MNP_INITIALIZABLE(MNServer);
     MNQTcpServer* tcp_; ///< TCP szerver socket
     QUdpSocket* udp_; ///< UDP szerver socket
 
-    override void run();
+    void run() override;
 public:
     static const int PORT=3172; ///< A szerver portja. Találd ki, miért ez! ;)
 private slots:

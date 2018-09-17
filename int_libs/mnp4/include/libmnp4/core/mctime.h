@@ -54,7 +54,7 @@ DECLARE_MNP_INITIALIZABLE(MCTime);
 
     MCTime();
     ~MCTime();
-    override void run();
+    void run() override;
 
     /**
      * Platformfüggő implementációja van. A feladata, hogy egy

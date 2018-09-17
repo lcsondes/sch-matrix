@@ -28,8 +28,8 @@ class MNP4_EXPORT MPLoad : public MPacket
 {
 DECLARE_MNP_PACKET(MPLoad);
 protected:
-    override bool load2(QByteArray);
-    override QByteArray save2();
+    bool load2(QByteArray) override;
+    QByteArray save2() override;
 public:
     QString name;
     

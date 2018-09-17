@@ -51,7 +51,7 @@ Q_OBJECT
     Transmitter* transmitter_;
     MPStatus lastStatus_;
 private:
-    override void run();
+    void run() override;
     
     void startPlaying();
     void playTick(bool hard=false);

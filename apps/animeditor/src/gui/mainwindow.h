@@ -60,7 +60,7 @@ Q_OBJECT
     SceneTree* sceneTree_;
     QDockWidget* sceneTreeDock_;
 
-    override void closeEvent(QCloseEvent*);
+    void closeEvent(QCloseEvent*) override;
     void saveCore(QString);
 public:
     MainWindow();

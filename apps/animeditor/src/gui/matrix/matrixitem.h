@@ -34,9 +34,9 @@ Q_OBJECT
 
     MatrixItem(const MatrixItem&)=delete;
 public:
-    override QRectF boundingRect() const;
+    QRectF boundingRect() const override;
     QRectF boundingRect2() const;
-    override void paint(QPainter*,const QStyleOptionGraphicsItem*,QWidget*);
+    void paint(QPainter*,const QStyleOptionGraphicsItem*,QWidget*) override;
     static QPoint translatePixelCoordsSch(int,int,bool doubleY);
     static QPoint translatePixelCoordsTrans(int,int,bool doubleY);
 

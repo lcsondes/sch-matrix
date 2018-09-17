@@ -67,7 +67,7 @@ private:
     QWaitCondition jobs_wc_; ///< A jobs_-ba történő írást jelző esemény.
     QQueue<Job> jobs_; ///< A feldolgozásra váró csomagok.
 
-    override void run();
+    void run() override;
 public:
     //Bár csinálhatsz magadnak példányokat belőle, egy globális példány is
     //rendelkezésre áll. Használd inkább azt!

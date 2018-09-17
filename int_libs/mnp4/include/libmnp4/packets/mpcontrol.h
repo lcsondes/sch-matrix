@@ -29,8 +29,8 @@ class MNP4_EXPORT MPControl : public MPacket
 DECLARE_MNP_PACKET(MPControl);
 
 protected:
-    override bool load2(QByteArray);
-    override QByteArray save2();
+    bool load2(QByteArray) override;
+    QByteArray save2() override;
 public:
 	/**
 	 * A használható parancsok.

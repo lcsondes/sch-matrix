@@ -29,8 +29,8 @@ class MNP4_EXPORT MPPing : public MPacket
 DECLARE_MNP_PACKET(MPPing);
 
 protected:
-    override bool load2(QByteArray);
-    override QByteArray save2();
+    bool load2(QByteArray) override;
+    QByteArray save2() override;
 public:
     ///A csomag típusa.
     enum Type{REQUEST=0,RESPONSE=1,INVALID} type; //1 bájtként szerializálódik
