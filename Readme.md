@@ -4,16 +4,19 @@ Schönherz Mátrix
 Programok, amelyek szükségesek egy Mátrix esemény lebonyolításához,
 plusz dokumentáció.
 
+**FIGYELEM**: Az itt található AnimEditor nem teljesen kompatibilis a 2012-essel,
+amíg az van hivatalosan használatban, abból kell exportálni az animációt beadáshoz!
+
 Ami kell
 --------
 
 * Qt 5.11.1 vagy valami kompatibilis
 * FMOD Ex 4 (régebben könnyebb volt beszerezni, most kicsit kutatni kell utána)
-* ~~Lua 5.2.1~~ (beépítve)
+* ~~Lua 5.3.5~~ (beépítve)
 
-A Luát update-eltem 5.3.5-re, ez a bit32 libraryt megszűnteti, ami eltörhet egyes régi animációkat.
+A Luát update-eltem 5.3.5-re a 2012-es állapothoz képest, ez a bit32 libraryt megszünteti, ami eltörhet egyes régi animációkat. A Q4X formátum ezért verziót lépett 2-re.
 
-Ez egy workaround, ha berakod a .qp4 elejére:
+Ez egy lehetséges workaround régi animációkhoz, ha berakod a .qp4 elejére:
 
 ```
 local bit32 = bit32 or load([[return {

@@ -22,7 +22,7 @@ bool extract(const char* filename)
 {
 	QFile f(filename);
 	f.open(QIODevice::ReadOnly);
-	if(f.read(4)!="Q4X1")return false;
+	if(f.read(4)!="Q4X2")return false;
 	f.read(4); //width, height
 	quint32 size;
 	for(int i=0;i<=1;++i)

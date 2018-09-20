@@ -192,10 +192,10 @@ bool QP4Handler::save(Embed* root,SceneTree::Metadata* meta,QIODevice* dev)
 bool QP4Handler::exportAnim(Embed* root,SceneTree::Metadata* meta,
                             QIODevice* dev)
 {
-    //Formátum: Q4X1[w:2][h:2][méret:4]Q4Z[méret:4]QPRZ[méret:4]hang
+    //Formátum: Q4X2[w:2][h:2][méret:4]Q4Z[méret:4]QPRZ[méret:4]hang
     //minden szám big-endian
     //exportra picit feljebb tekertem a tömörítést
-    dev->write("Q4X1");
+    dev->write("Q4X2");
     //méretek
     {
         quint16 w=qToBigEndian<quint16>(SchWidget::WIDTH);

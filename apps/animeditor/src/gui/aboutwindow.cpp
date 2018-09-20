@@ -36,7 +36,7 @@ AboutWindow::AboutWindow(QWidget* parent/*=NULL*/)
     {
         std::swap(names[i],names[rand()%names.size()]);
     }
-    mainText_=new QLabel((tr("<h1>Matrix AnimEditor 2012</h1>"
+    mainText_=new QLabel((tr("<h1>Matrix AnimEditor 2018</h1>"
                             "<h3>By %1</h3>")+
                             //miért ne?
                             tr("<h4>Powered by <a href=\"http://z0r.de/1384\">"
@@ -47,7 +47,7 @@ AboutWindow::AboutWindow(QWidget* parent/*=NULL*/)
                             "Technologies Pty, Ltd., 1994-2012.<br><br>")+
                             //ezt meg a Lua licenc miatt
                             tr("Uses <a href=\"http://www.lua.org/\">Lua</a>, "
-                            "Copyright © 1994-2012 Lua.org, PUC-Rio.<br><br>")+
+                            "Copyright © 1994-2015 Lua.org, PUC-Rio.<br><br>")+
                             //ezt meg az Oxygen licenc miatt
                             tr("Uses <a href=\"http://www.oxygen-icons.org/\">"
                             "Oxygen Icons</a>.<br>")
@@ -72,7 +72,7 @@ void AboutWindow::aboutLua()
 {
     QDialog a;
     QGridLayout l(&a);
-    QLabel main(tr("Copyright © 1994-2012 Lua.org, PUC-Rio.\n"
+    QLabel main(tr("Copyright © 1994-2015 Lua.org, PUC-Rio.\n"
                    "Permission is hereby granted, free of charge, to any "
                    "person obtaining a copy of this software and associated "
                    "documentation files (the \"Software\"), to deal in the "

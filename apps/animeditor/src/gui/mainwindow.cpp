@@ -30,7 +30,7 @@
 
 MainWindow::MainWindow()
 {
-    setWindowTitle(tr("AnimEditor 2012"));
+    setWindowTitle(tr("AnimEditor 2018"));
 
     epichax_=new QTimer(this);
     epichax_->start(500);

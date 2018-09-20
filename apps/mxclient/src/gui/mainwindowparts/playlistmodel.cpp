@@ -94,10 +94,10 @@ void PlayListModel::addFile(QString file)
     QFile f(file);
     if(!f.exists())return;
     f.open(QIODevice::ReadOnly);
-    //Formátum: Q4X1[w:2][h:2][méret:4]Q4Z[méret:4]QPRZ[méret:4]hang
-    if(f.read(4)!="Q4X1")
+    //Formátum: Q4X2[w:2][h:2][méret:4]Q4Z[méret:4]QPRZ[méret:4]hang
+    if(f.read(4)!="Q4X2")
     {
-        qDebug()<<file<<" !Q4X1";
+        qDebug()<<file<<" !Q4X2";
         return;
     }
     {

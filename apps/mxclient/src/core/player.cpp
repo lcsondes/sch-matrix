@@ -219,7 +219,7 @@ void Player::play(QString q4x,quint32 length)
     //különben a playlistbe sem kerül be
     QFile f(q4x);
     f.open(QIODevice::ReadOnly);
-    f.read(8); //Q4X1wwhh
+    f.read(8); //Q4X2wwhh
     quint32 skip;
     f.read((char*)&skip,4);
     skip=qFromBigEndian<quint32>(skip);

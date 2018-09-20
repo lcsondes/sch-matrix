@@ -19,7 +19,7 @@
     </message>
     <message>
         <location filename="src/gui/aboutwindow.cpp" line="22"/>
-        <source>&lt;h1&gt;Matrix AnimEditor 2012&lt;/h1&gt;&lt;h3&gt;By %1&lt;/h3&gt;</source>
+        <source>&lt;h1&gt;Matrix AnimEditor 2018&lt;/h1&gt;&lt;h3&gt;By %1&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -55,7 +55,7 @@
     </message>
     <message>
         <location filename="src/gui/aboutwindow.cpp" line="58"/>
-        <source>Copyright Â© 1994-2012 Lua.org, PUC-Rio.
+        <source>Copyright Â© 1994-2015 Lua.org, PUC-Rio.
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
@@ -107,7 +107,7 @@ THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRES
     <name>MainWindow</name>
     <message>
         <location filename="src/gui/mainwindow.cpp" line="16"/>
-        <source>AnimEditor 2012</source>
+        <source>AnimEditor 2018</source>
         <translation></translation>
     </message>
     <message>

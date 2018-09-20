@@ -102,7 +102,7 @@ ownership QIODevice* MCAnimLoader::open_q4x(QString filename)
     //a QtIOCompressor ~QObject()-je majd törli
     QFile* f=new QFile(filename);
     f->open(QIODevice::ReadOnly);
-    if(f->read(4)!="Q4X1")
+    if(f->read(4)!="Q4X2")
     {
         delete f;
         return NULL;
